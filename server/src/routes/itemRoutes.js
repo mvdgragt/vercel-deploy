@@ -12,14 +12,14 @@ import {
   updateItemById,
   deleteManyItems,
   deleteItemById,
-} from "../controllers/itemController";
+} from "../controllers/itemController.js";
 
 const router = express.Router();
 router.get("/items", getAllItems);
 router.get("/items/names", getItemsByName);
 router.get("/items/quantity", getItemsByQuantity);
 router.get("/items/sorted", getSortedItems);
-router.get("items/grouped", getGroupedItems);
+router.get("/items/grouped", getGroupedItems);
 router.get("/items/count", getItemCount);
 router.post("/items", createItem);
 router.patch("/items/:id", patchItemById);
