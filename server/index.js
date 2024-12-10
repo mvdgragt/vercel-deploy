@@ -7,7 +7,11 @@ import router from "./src/routes/itemRoutes.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://vercel-deploy-client-pink.vercel.app", // Update this to your frontend URL
+  })
+);
 app.use(express.json());
 app.use("/api", router);
 
