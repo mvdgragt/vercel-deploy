@@ -69,6 +69,7 @@ export const getItemCount = async (req, res) => {
 
 export const createItem = async (req, res) => {
   try {
+    console.log(req.body);
     const newItem = new Item(req.body);
     await newItem.save();
     res.json(newItem);
