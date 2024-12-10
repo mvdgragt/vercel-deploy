@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ItemForm from "./ItemForm";
 
 type Item = {
   _id: string;
@@ -21,6 +22,10 @@ const ItemList = () => {
     }
   };
 
+  const handleItemCreated = () => {
+    fetchItems();
+  };
+
   const deleteItem = async (id: string) => {
     try {
       await axios.delete(
@@ -39,6 +44,7 @@ const ItemList = () => {
   return (
     <div>
       <h2>Items</h2>
+      <ItemForm onItemCreated={handleItemCreated} />
       <table>
         <thead>
           <tr>

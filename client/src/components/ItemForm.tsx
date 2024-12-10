@@ -1,7 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 
-const ItemForm = () => {
+type ItemFormProps = {
+  onItemCreated: () => void;
+};
+
+const ItemForm = ({ onItemCreated }: ItemFormProps) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -12,6 +16,9 @@ const ItemForm = () => {
         quantity,
       });
       alert("Item created!");
+      onItemCreated();
+      setName("");
+      setQuantity(1);
     } catch (err) {
       console.error("Failed to create item:", err);
     }
