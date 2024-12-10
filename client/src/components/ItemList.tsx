@@ -26,6 +26,7 @@ const ItemList = () => {
       await axios.delete(
         `https://vercel-deploy-server-ten.vercel.app/items/${id}`
       );
+      fetchItems();
     } catch (err) {
       console.error("Failed to delete item:", err);
     }
