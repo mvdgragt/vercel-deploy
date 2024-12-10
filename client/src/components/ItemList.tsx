@@ -13,7 +13,7 @@ const ItemList = () => {
   const fetchItems = async () => {
     try {
       const response = await axios.get(
-        "https://vercel-deploy-server-ten.vercel.app/api/items"
+        "https://vercel-deploy-server-ten.vercel.app/items"
       );
       setItems(response.data);
     } catch (err) {
@@ -24,7 +24,7 @@ const ItemList = () => {
   const deleteItem = async (id: string) => {
     try {
       await axios.delete(
-        `https://vercel-deploy-server-ten.vercel.app/api/items/${id}`
+        `https://vercel-deploy-server-ten.vercel.app/items/${id}`
       );
     } catch (err) {
       console.error("Failed to delete item:", err);
