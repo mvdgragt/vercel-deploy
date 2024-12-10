@@ -7,12 +7,7 @@ import router from "./src/routes/itemRoutes.js";
 dotenv.config();
 
 const app = express();
-// app.use(
-//   cors({
-//     origin: "https://vercel-deploy-client-pink.vercel.app", // Update this to your frontend URL
-//   })
-// );
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 app.use(router);
 
@@ -21,5 +16,5 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB", err));
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
+// const PORT = process.env.PORT || 3001;
+// app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
