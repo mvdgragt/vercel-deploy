@@ -9,7 +9,10 @@ const ItemForm = () => {
     try {
       await axios.post(
         "https://vercel-deploy-server-ten.vercel.app/api/items",
-        { name, quantity }
+        {
+          name,
+          quantity,
+        }
       );
       alert("Item created!");
     } catch (err) {
